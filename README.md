@@ -41,6 +41,6 @@ var xs = new xScrollSelect({
 ```
 
 ## demo
-
+![demo show](https://github.com/zhang-xiao/xScrollSelect/blob/master/xScrollSelect.gif)
 
 
