@@ -38,6 +38,12 @@ var xs = new xScrollSelect({
     }
 });
 
+//实例方法
+//展示
+xs.show();
+//隐藏
+xs.hide()
+
 ```
 
 ## demo
