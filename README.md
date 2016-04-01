@@ -42,7 +42,7 @@ var xs = new xScrollSelect({
 //展示
 xs.show();
 //隐藏
-xs.hide()
+xs.hide();
 
 ```
 
