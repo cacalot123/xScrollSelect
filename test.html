@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title></title>
+
+	<style type="text/css">
+	#xScrollSelect * {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	body,ul,li {
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+
+	body {
+		font-size: 12px;
+		font-family: ubuntu, helvetica, arial;
+		overflow: hidden; /* this is important to prevent the whole page to bounce */
+	}
+
+	#xScrollSelectwrapper {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.indicator {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		left: -10px;
+    	right: -10px;
+		height: 40px;
+		border-top: 1px solid #E4EAED;
+    	border-bottom: 1px solid #E4EAED;
+	}
+
+	.content {
+		position: relative;
+		margin: 10px;
+		color: #CBCFD2;
+		font-size: 18px;
+	}
+
+	li {
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		overflow: hidden;
+	}
+
+	.select-box {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		bottom: 0px;
+		background-color: #fff;
+		z-index: 1000;
+	}
+
+	.select-box .header {
+		width: 100%;
+		height: 40px;
+		background-color: #F2F2F2;
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+
+	.select-box .header>span:first-child {
+		float: left;
+		line-height: 40px;
+		margin-left: 15px;
+	}
+
+	.select-box .header>span:last-child {
+		float: right;
+		line-height: 40px;
+		margin-right: 15px;
+	}
+
+	.select-box-cover {
+		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 900;
+	}
+
+	#xScrollSelect ul li.active {
+		color: #1F2224;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	</style>
+
+	<script type="text/javascript" src="./iscroll-probe.js"></script>
+	<script type="text/javascript" src="./xScrollSelect.js"></script>
+	<script type="text/javascript">
+
+		window.onload = function() {
+			var xs = new xScrollSelect({
+				spaceNum: 2,
+				itemWidth: 40,
+				showCover: true,
+				items: [
+					{name: '第一个'},
+					{name: '第二个'},
+					{name: '第三个'},
+					{name: '第四个'}
+				],
+				onScrollEnd: function(params) {
+				},
+				onConfirm: function(params) {
+					console.log(params);
+				}
+			});
+			
+			document.getElementById("btn").addEventListener('click', function() {
+				xs.show();
+			}, false);
+
+		}
+
+	</script>
+</head>
+<body>
+	<button id="btn">show</button>
+	
+	<div id="xScrollSelect">
+		<div class="select-box-cover"></div>
+		<div class="select-box">
+			<div class="header">
+				<span class="cancel">取消</span>
+				<span class="confirm">确定</span>
+			</div>
+			<div class="content">
+				<div class="indicator"></div>
+				<div id="xScrollSelectwrapper"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
