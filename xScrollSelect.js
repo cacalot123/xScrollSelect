@@ -163,6 +163,11 @@
 			self.options.onConfirm(self.scrollEndData);
 		}, false);
 
+		//添加遮罩的监听
+		this.$selectcover.addEventListener('click', function() {
+			self.hide();
+		}, false);
+
 		//初始化的时候隐藏
 		this.hide();
 		
