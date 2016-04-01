@@ -2,9 +2,9 @@
 模拟仿移动端iOS滚动选择的js插件
 
 ## 安装
-*引入iscroll-probe.js
-*引入xScrollSelect.js
-*引入xScrollSelect.css
+* 引入iscroll-probe.js
+* 引入xScrollSelect.js
+* 引入xScrollSelect.css
 
 ## 使用示例
 ```javascript
